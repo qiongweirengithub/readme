@@ -1,0 +1,35 @@
+1. linux 配置ssh
+密码登录：https://blog.csdn.net/weixin_48646819/article/details/120034234
+免密登录：https://blog.csdn.net/LLLLLoodwd/article/details/123510848
+
+2. window通过ssh 登录 linux：
+ssh username@linuxip
+pass>username-password
+
+3. windows golang环境搭建
+3.1  go下载与vscode配置 https://www.bilibili.com/read/cv18412064
+3.2  跨平台编译 https://www.jianshu.com/p/aaa07f767d8e
+	go env -w GOOS=linux 通过此指令设置环境变量
+
+4. windows下 文件服务器安装（基于nginx）
+https://blog.csdn.net/zhangphil/article/details/122377474
+注意：nginx解压后，要放到不包含中文的文件路径中，否则会报错
+（未配置）如何后台执行exe程序：https://blog.csdn.net/jiulinghouxiao/article/details/125635074
+本机文件下载的根目录：E:\app\fileroot
+
+
+4. linux（debian） docker 环境安装
+
+https://www.idcspy.com/32737.html
+只能root执行问题解决： https://zhuanlan.zhihu.com/p/149249361 (chmod 666 /var/run/docker.sock)
+使用国内镜像源 https://www.bbsmax.com/A/amd0ok865g/
+docker安装之后，已经安装了开机启动service文件，但还需要在设置下开机启动，才能在服务器重启时自动启动
+核心文件：
+	/etc/docker/daemon.json, 配置docker的基本属性，比如镜像地址，存储地址（cluster-store 集群网络）等等
+	/lib/systemd/system/docker.service  docker的systemd开启启动文件，配置docker启动的指令等等，
+
+
+5. ubuntu docker 安装
+https://zhuanlan.zhihu.com/p/143156163
+
+

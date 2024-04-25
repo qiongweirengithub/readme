@@ -1,0 +1,36 @@
+
+1. docker 用overlay网络启动提示错误：
+endpoint with name XXXX already exists in network XXXX
+https://blog.csdn.net/mgaofeid/article/details/126926302
+
+排查：docker network inspect overlay_net_name\
+    docker network disconnect -f networname  docker-name
+
+
+2. 容器无法进入：
+https://blog.csdn.net/NOOBBB/article/details/126519868
+原因：镜像没有 /bin/sh， 找有此指令的镜像，比如alpine版
+
+
+3. 常用指令
+docker build -t gserver-gateway .
+docker run --rm -d -p 8888:8888 --name gserver-gateway gserver-gateway
+docker run -it -d  --rm --net overlay_demo --name db_nats -v /home/debian/app/nats:/home/  nats:alpine -c /home/nats-server.conf
+docker ps
+docker logs db_nats
+docker exec -it db_nats
+docker container kill db_nats
+docker run -d --restart=always
+docker update --restart=no containerid 关闭容器自动重启
+
+
+4. nats 集群搭建
+非docker版本集群，https://blog.csdn.net/ss810540895/article/details/125524626
+docker单机版本：https://www.pudn.com/news/6228d3ca9ddf223e1ad1b40f.html
+
+
+docker run -d --rm --net overlay_demo --name db_nats -v /home/debian/app/nats:/home/ nats:alpine -c /home/nats-server.conf
+
+
+
+

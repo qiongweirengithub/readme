@@ -1,0 +1,122 @@
+{
+    "rokoko_custom_names": true,
+    "version": 1,
+    "bones": {
+        "hip": [
+            "def-pelvis",
+            "cc_base_hip",
+            "torso",
+            "spine",
+            "rl_boneroot",
+            "cc_base_waist"
+        ],
+        "custom_bone_mixamorig:spine": [
+            "cc_base_pelvis",
+            "spine_fk.002",
+            "mixamorig:spine",
+            "spine.001"
+        ],
+        "neck": [
+            "neck",
+            "cc_base_necktwist01"
+        ],
+        "head": [
+            "head",
+            "cc_base_head"
+        ],
+        "rightShoulder": [
+            "shoulder.r",
+            "cc_base_r_clavicle"
+        ],
+        "rightUpperArm": [
+            "upper_arm_fk.r",
+            "cc_base_r_upperarmtwist02",
+            "cc_base_r_upperarm"
+        ],
+        "rightLowerArm": [
+            "forearm_fk.r",
+            "cc_base_r_forearm"
+        ],
+        "rightHand": [
+            "hand_fk.r",
+            "cc_base_r_hand"
+        ],
+        "leftShoulder": [
+            "cc_base_l_clavicle",
+            "shoulder.l"
+        ],
+        "leftUpperArm": [
+            "cc_base_l_upperarmtwist02",
+            "upper_arm_fk.l",
+            "cc_base_l_upperarm"
+        ],
+        "leftLowerArm": [
+            "cc_base_l_forearmtwist02",
+            "forearm_fk.l",
+            "cc_base_l_forearm"
+        ],
+        "leftHand": [
+            "cc_base_l_hand",
+            "hand_fk.l"
+        ],
+        "rightUpLeg": [
+            "cc_base_r_thigh",
+            "thigh_fk.r"
+        ],
+        "rightLeg": [
+            "cc_base_r_calf",
+            "shin_fk.r"
+        ],
+        "rightToe": [
+            "cc_base_r_toebasesharebone",
+            "toe_fk.r"
+        ],
+        "leftUpLeg": [
+            "cc_base_l_thigh",
+            "thigh_fk.l"
+        ],
+        "leftLeg": [
+            "cc_base_l_calf",
+            "shin_fk.l"
+        ],
+        "leftToe": [
+            "cc_base_l_toebasesharebone",
+            "toe_fk.l"
+        ],
+        "custom_bone_mixamorig:spine1": [
+            "mixamorig:spine1",
+            "spine_fk.002",
+            "cc_base_spine01"
+        ],
+        "custom_bone_mixamorig:spine2": [
+            "mixamorig:spine2",
+            "spine_fk.003",
+            "cc_base_spine02"
+        ],
+        "rightFoot": [
+            "cc_base_r_foot",
+            "foot_fk.r"
+        ],
+        "leftFoot": [
+            "cc_base_l_foot",
+            "foot_fk.l"
+        ],
+        "custom_bone_mixamorig1:spine": [
+            "mixamorig1:spine",
+            "cc_base_waist"
+        ],
+        "custom_bone_mixamorig1:spine1": [
+            "mixamorig1:spine1",
+            "cc_base_spine01"
+        ],
+        "custom_bone_mixamorig1:spine2": [
+            "mixamorig1:spine2",
+            "cc_base_spine02"
+        ],
+        "custom_bone_mixamorig1:hips": [
+            "mixamorig1:hips",
+            "cc_base_hip"
+        ]
+    },
+    "shapes": {}
+}

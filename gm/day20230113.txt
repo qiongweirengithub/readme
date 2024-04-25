@@ -1,0 +1,18 @@
+
+1. go 多模块搭建
+    https://zhuanlan.zhihu.com/p/583025388
+    go work init biz
+    go work use common
+    
+
+
+2. vscode 代码提示慢
+安装 gopls https://blog.csdn.net/qq_38697767/article/details/123767713
+
+
+3. golang 入门
+https://zhuanlan.zhihu.com/p/137304443
+
+
+4. main线程退出后所有协程都会退出，如何让main线程优雅的保持和退出
+

@@ -1,0 +1,5 @@
+1. 插件下载：https://www.bilibili.com/video/BV1uY4y1C7TU/?spm_id_from=333.337.search-card.all.click&vd_source=c9b5ebeb66267b8cba177963b1f25a82
+	目前已在百度网盘
+2. 教程使用：
+	https://blog.csdn.net/qq_46043095/article/details/130518874
+3. 另外为了看到模型的骨骼节点，还要下载Animation Rigging

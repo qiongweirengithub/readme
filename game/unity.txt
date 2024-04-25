@@ -1,0 +1,17 @@
+urp:
+    vfx 的output particle mesh 无 shader 选项： https://blog.csdn.net/weixin_38708854/article/details/117234983
+    vfx 使用自定义shader的时候，有光照shadow： 自定义shader的graph inspector中有【casting shadow】选项
+
+
+
+常用插件与教程
+Quick Outline ： https://www.youtube.com/watch?v=UmvKZHZx8Gw
+
+
+
+曲线编辑器：
+	用于特效path曲线制作， 
+		1. Bézier Path Creator： https://www.youtube.com/watch?v=hiyv9vZAOvA
+		2. 使用方式：https://www.youtube.com/watch?v=hiyv9vZAOvA
+		3. 空指针问题（resetting the path creator component after I added it）：https://forum.unity.com/threads/bezier-path-creator-free.623653/page-2
+	

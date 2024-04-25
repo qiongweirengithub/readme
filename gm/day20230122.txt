@@ -1,0 +1,34 @@
+1. go 程序参数
+go env -w GOOS=linux 编译结果环境
+go env -w GOMAXPROCs 最大线程数量
+
+
+2. golang 跨平台编译：
+核心参数：
+GOOS, GOARCH[go tool dist list查看支持的结果平台], CGO_ENABLED[是否使用cgo编译, 设置为1开启动态加载类库，应该设置为0，避免移植环境问题]
+2.1 linux uname 查看系统版本（GOOS=linux）：   
+    linux x86_64   GOARCH=amd64
+    linux aarch64  GOARCH=arm64/arm32
+    常见方式：
+    https://zhuanlan.zhihu.com/p/377530723
+    https://blog.csdn.net/yuanlulu/article/details/124758808
+    https://blog.csdn.net/qq_39852676/article/details/123674071
+
+
+3. etcd 与 docker 兼容性
+    3.1.5 使用的 etcd 接口版本为 2.0
+    3.5.7 版本默认使用的接口版本为 3.0
+    docker跨主机overlay网络搭建如果使用3.5.7版本的etcd会出现错误（The endpoint is probably not valid etcd cluster endpoint），
+    https://blog.csdn.net/lizy0327/article/details/114214665
+    需要启动过程开启 2.0 版本接口的支持（https://blog.csdn.net/zyy247796143/article/details/117662673）
+
+
+4. 指令新增：
+    journal -u etcd.service -xef
+    systemctl daemon-reload
+    systemctl status etcd/docker
+    systemctl kill etcd/docker
+
+
+
+

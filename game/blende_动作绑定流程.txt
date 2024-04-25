@@ -1,0 +1,49 @@
+# accrig 绑定，并导入unity，生成游戏rig
+1.  accrig 导入模型，绑定后，导出fbx（blender）。
+2.  blender 用ccpipline 插件 import 第一步导出的模型， 然后选中骨骼，对不需要的骨骼进行清理（脸部、手部，脚部等等不需要的细节骨骼去除）
+	然后对骨骼进行应用rotation,transform,scale（pose模式下alt+g, alt+r使编辑模式，pose模式和物体模式完全一致，否则应用scale时会跑飞）（否则执行第三的时候会出现跑飞）。
+	这个很重要，特别是保持三种模式的统一性！！！！！
+3.  导入的模型后，使用gamerigtools 【generate deform rig】，注意不可勾选【disconnect bone】和【flat hierarchy】，
+	否则每个骨骼只控制一部分，没法传递控制关系，在【retarget】时无法正常工作（部分骨骼无retarget时固定不动）。
+	点击【generate deform rig】后，需要进行【bake action bakery】，否则新生成的骨骼与mesh无权重控制关系
+
+
+
+# maxmo原生动作，应用到gamerig
+1. 导入maxmo动作或者character，进行缩放，与第3步的骨骼大小一样。(缩放后不要应用alltransfrom，也不要应用altg，algr，直接进行下面的操作即可)
+2. 使用rokoko进行【retargeting】，【source】为maxmo的骨骼，【target】为第三步生成的骨骼，
+	点击【build bone list】，根据实际控制关系进行一一对照填写（注意可对第3步的骨骼在编辑模式下调整大小（尽量与maxmo对齐），与maxmo骨骼对齐），
+	maxmo骨骼在姿态模式调整位置，跟第3步骨骼位置对齐，
+	选择maxmo骨骼，切换到要retargting的某个动作，
+	然后【retarget animation】在【current】模式下烘焙动作，生成xxxx_retarget动作。
+
+
+
+
+# maximmo rigify 制作的动作，引用到gamerig
+【复制当前只有maximorigify的项目，然后在复制后的项目进行操作，保证rigify的项目干净】
+1. 用[maximo rigify!!!!]做的动作如何导出用作retargting：
+	1. maximo rigify 选择骨骼层级，只展示原始骨骼
+	2. game rigify 【generate deform rig】， 只勾选【option-》{Remove BBone, Move bone to layer1, Remove Non Deform, Unlock Transform, Remove BoneShape, Remove Old Constraints, Constrain deform rig to controller rig}】，其他不要勾选，生成gamerig， 这种gamerig在bakeaction时不会把控制权转移到gamerig，
+	3. bake action， 把需要的动作烘焙到新gamerig骨骼上（最终导出的是这个gamerig，骨骼干净标准，方便retargting） ， 每个动作要有一个tpose帧！！！！， 方便目前项目retargeting
+	4. gamerig 动作 push nla（至少要有2个动作，(至少要有一个tpose动作？)，否则导入新的项目后，姿态模式无法使用alt+g和alt+r 回到TPOSE模式）
+	5. 缩放gamerig 与目标项目的骨骼大小一样，方便后序的retarging，（后者在目标项目也行）
+	6. 完成
+2. cc 导入 animation 或者charactor，动作骨骼切到tpose，调整大小，对齐当前角色骨骼， 选择动作骨骼，烘焙到当前角色的骨骼。
+
+疑问：accrig后导入到blender，生成gamerig前需要对accrig的骨骼应用rotation 和 transform， 然后一般也要应用scale，否则生成gamerig会导致模型缩放，但是应用scale会跑飞。。可在编辑模式调整位置。这个是完全错误的结论！！！
+
+
+
+
+#已有动作如果对其中部分进行重新绑定，比如应用场景为衣服重绑定骨骼，导入游戏做动态骨骼使用
+1. 切换到物体模式，并是TOPSE位置（重要，保持编辑模式，topose与物体模式位置一致），
+2. 增加骨骼，并移动骨骼到需要绑定的衣服，对骨骼进行应用所有变换（重要！！position，rotation，scacle），
+3. 对需要重新绑定的物体，去除之前绑定的顶点组（见顶点组），删除骨骼修改器关联的【主骨骼】
+4. 对需要重新绑定的物体，ctrl+p 自动权重绑定到新的骨骼，绑定到【新骨骼】。
+5. 选中新骨骼，在pose模式检查绑定状态
+6. 选中新骨骼，shift 【主骨骼】，ctrl+j 将新骨骼合并新骨骼到【主骨骼】, 这时候新骨骼还不随着主骨骼移动，需要进入编辑模式选择新骨骼，然后shift选择跟随的骨骼，然后ctrl+p keepoffset
+7. 因【新骨骼】已合并到【主骨骼】，因此需要对重新绑定的物体，重新选择骨骼修改器关联到【主骨骼】。
+8. 选中【主骨骼】，进入pose模式，检查绑定状态。
+
+

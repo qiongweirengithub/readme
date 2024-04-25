@@ -1,0 +1,50 @@
+
+## 在arm64机器上有问题， 可通过weave搭建解决此问题（见4）
+1. docker 跨机器通信
+	https://www.cnblogs.com/Dy1an/p/16441839.html
+	https://www.likecs.com/show-307534708.html#sc=1800
+	1. /etc/docker/daemon.json 配置 cluster-store地址和cluster-advertise地址
+	2. 第一步完成之后，在其中一个机器上创建overlay网络
+		docker network create -d overlay overlay_demo
+	3. 检查overlay网络是否同步其他主机的docker网络
+		docker network ls
+	4. 使用overlay网络启动一个docker container
+		主机1： docker container run -it --rm --net overlay_demo --name h1 alpine sh 
+		主机2： docker container run -it --rm --net overlay_demo --name h2 alpine sh 
+	5. 主机1执行 ping h2， 检查网络是否连通、
+
+2. docker 是如何开机启动的：
+	docker 是通过systemd管理的，配置文件为在lib/systemd/system/docker.service 
+	可通过systemctl status docker 查看docker的状态
+
+
+3. docker deamon.josn 配置详解：
+	https://www.jianshu.com/p/9e448f58cff1
+
+
+
+
+4. weave 容器跨主机通信环境搭建(方法1)：
+https://blog.csdn.net/qq_43410878/article/details/123658931
+	1. 下载 https://github.com/weaveworks/weave/releases
+	2. 执行 weave version & weave launch 会自动下载镜像
+	3. weave connect 其他主机ip
+	4. 本地启动一个docker容器，获取容器id
+	5. weave attach ip/mast containerid （weave attach 172.10.3.23/24 2c06eff68d3b） 为容器配置ip地址
+	6. 登录容器，即可ping其他同样方式配置了ip地址的容器
+	7. 问题：使用此方法时，nats 的 cluster.host 必须配置为 0.0.0.0
+
+
+5. weave 容器跨主机通信环境搭建(方法2，快捷方便，docker命令不变，可通过host名字连通)：
+https://blog.csdn.net/u013355826/article/details/98738783
+https://www.h3399.cn/197001/129784.html
+https://www.huati365.com/0ff8a71fc368bd8b
+	1. 下载 https://github.com/weaveworks/weave/releases
+	2. 执行 weave version & weave launch 会自动下载镜像
+	3. eval $(weave env)， 修改DOKCER_HOST环境变量的值，这个每次重连主机，都要执行一下，否则依赖了此weave的服务会启动失败，因为无法找到weave中机器的ip或者hostname
+	4. 直接通过普通docker指令 启动的容器可自动加入 weave 管理的网络
+	6. 登录容器，即可ping其他容器的 【name】
+	7. eval $(weave env  --restore) 恢复 DOCKER_HOST 环境变量
+
+
+
