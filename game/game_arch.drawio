@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2024-05-08T16:11:50.695Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="9t4bCkXoLZKH9r5_5WOY" version="24.3.1" type="device">
+<mxfile host="app.diagrams.net" modified="2024-05-08T16:18:38.766Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36" etag="YZDHtGWElVExaFJwGzYw" version="24.3.1" type="device">
   <diagram name="Page-1" id="c7558073-3199-34d8-9f00-42111426c3f3">
-    <mxGraphModel dx="3045" dy="714" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="826" pageHeight="1169" background="none" math="0" shadow="0">
+    <mxGraphModel dx="2803" dy="814" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="826" pageHeight="1169" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -11,19 +11,21 @@
           <mxGeometry x="346" y="300" width="335" height="190" as="geometry" />
         </mxCell>
         <mxCell id="pnOoYnmZAtzS62gMc0uK-100" value="UI" style="shape=process;whiteSpace=wrap;align=left;verticalAlign=top;size=0.255863539445629;fontStyle=1;strokeWidth=3;fillColor=#FFCCCC" parent="1" vertex="1">
-          <mxGeometry x="539.5" y="688" width="469" height="250" as="geometry" />
+          <mxGeometry x="441" y="691" width="469" height="250" as="geometry" />
         </mxCell>
         <mxCell id="pnOoYnmZAtzS62gMc0uK-102" value="&lt;p style=&quot;margin: 0px; margin-top: 4px; text-align: center; text-decoration: underline;&quot;&gt;&lt;strong&gt;invokeUiEvent&lt;/strong&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px; margin-left: 8px;&quot;&gt;传递给角色&lt;/p&gt;" style="verticalAlign=middle;align=center;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=1;fontStyle=1;strokeWidth=3;fillColor=#E6FFCC" parent="1" vertex="1">
           <mxGeometry x="393" y="510" width="110" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="pnOoYnmZAtzS62gMc0uK-106" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="pnOoYnmZAtzS62gMc0uK-103" target="pnOoYnmZAtzS62gMc0uK-102" edge="1">
+        <mxCell id="C39uK7xA4uU1zR5Ak_56-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="pnOoYnmZAtzS62gMc0uK-103" target="pnOoYnmZAtzS62gMc0uK-102">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="pnOoYnmZAtzS62gMc0uK-103" value="&lt;p style=&quot;margin: 0px; margin-top: 4px; text-align: center; text-decoration: underline;&quot;&gt;&lt;strong&gt;ButtonEvent&lt;/strong&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px; margin-left: 8px;&quot;&gt;&lt;br&gt;&lt;/p&gt;" style="verticalAlign=middle;align=center;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=1;fontStyle=1;strokeWidth=3;fillColor=#E6FFCC" parent="1" vertex="1">
-          <mxGeometry x="548" y="703" width="100" height="30" as="geometry" />
+          <mxGeometry x="449.5" y="706" width="100" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="pnOoYnmZAtzS62gMc0uK-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.893;entryY=-0.007;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="pnOoYnmZAtzS62gMc0uK-104" target="pnOoYnmZAtzS62gMc0uK-100" edge="1">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="pnOoYnmZAtzS62gMc0uK-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" parent="1" source="pnOoYnmZAtzS62gMc0uK-104" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="887" y="688" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="pnOoYnmZAtzS62gMc0uK-104" value="&lt;p style=&quot;margin: 0px; margin-top: 4px; text-align: center; text-decoration: underline;&quot;&gt;&lt;strong&gt;renderUi&lt;/strong&gt;&lt;/p&gt;&lt;hr&gt;&lt;p style=&quot;margin: 0px; margin-left: 8px;&quot;&gt;角色数据&lt;/p&gt;&lt;p style=&quot;margin: 0px; margin-left: 8px;&quot;&gt;游戏数据&lt;/p&gt;" style="verticalAlign=middle;align=center;overflow=fill;fontSize=12;fontFamily=Helvetica;html=1;rounded=1;fontStyle=1;strokeWidth=3;fillColor=#E6FFCC" parent="1" vertex="1">
           <mxGeometry x="716" y="434" width="110" height="67" as="geometry" />
@@ -175,7 +177,7 @@
           <mxGeometry x="-585" y="645" width="60" height="32" as="geometry" />
         </mxCell>
         <mxCell id="yt-BPN5N51YkLN_ZX3K--5" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;模型基础能力搭建&lt;/h1&gt;&lt;p&gt;1. 导入模型到项目中&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;模型至少有三个动作&lt;/li&gt;&lt;ul&gt;&lt;li&gt;idle，move，attack&lt;/li&gt;&lt;li&gt;有这三个动作才能实现基本的功能&lt;/li&gt;&lt;li&gt;在此基础上才进行技能系统搭建&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;p&gt;&lt;/p&gt;&lt;p&gt;2. 添加基础组件&lt;/p&gt;&lt;p&gt;&lt;/p&gt;&lt;ul&gt;&lt;li&gt;设置animation。&lt;/li&gt;&lt;li&gt;复制标准animator controller，并赋值给角色Animator的controller中。并调整controller中不同状态对应的动画&lt;/li&gt;&lt;li&gt;boxcolleder， raycast 需要&lt;/li&gt;&lt;li&gt;添加nav mesh agent， 设置其属性（一般复制已有即可）&lt;/li&gt;&lt;li&gt;添加Character.cs 脚本，设置相关属性即可（血条，等等）&lt;/li&gt;&lt;ul&gt;&lt;li&gt;脚本实现角色状态（控制移动，攻击），血条等游戏元素&lt;/li&gt;&lt;/ul&gt;&lt;/ul&gt;&lt;div&gt;3. 将角色增加到GameManager对象中，可被管理。&lt;/div&gt;&lt;div&gt;4. 上述完成之后，可实现角色的基础移动，攻击。&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;5. 如何实现攻击有效&lt;/div&gt;&lt;div&gt;&lt;ul&gt;&lt;li&gt;攻击对应animation中，触发事件ActionCb事件即可，事件会回调Character.cs中的函数，然后传递给状态机，触发对应状态的处理函数。&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;p&gt;&lt;/p&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="-1210" y="250" width="480" height="409" as="geometry" />
+          <mxGeometry x="-1176" y="250" width="455" height="409" as="geometry" />
         </mxCell>
         <mxCell id="yt-BPN5N51YkLN_ZX3K--11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.25;entryY=1;entryDx=0;entryDy=0;" parent="1" source="yt-BPN5N51YkLN_ZX3K--8" target="pnOoYnmZAtzS62gMc0uK-108" edge="1">
           <mxGeometry relative="1" as="geometry" />
