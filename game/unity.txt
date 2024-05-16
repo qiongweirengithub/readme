@@ -15,3 +15,22 @@ Quick Outline ： https://www.youtube.com/watch?v=UmvKZHZx8Gw
 		2. 使用方式：https://www.youtube.com/watch?v=hiyv9vZAOvA
 		3. 空指针问题（resetting the path creator component after I added it）：https://forum.unity.com/threads/bezier-path-creator-free.623653/page-2
 	
+
+
+unity 
+	1. vfx output particle forward decal 色彩失真：
+		blend mode 从 additive 切换成 alpha
+
+	2. 如何解决vfx特效显示在角色前
+		2.1  UniversalRenderer 去除 角色所在层级
+		2.2  增加renderer feature， 单独渲染角色所在层级（通过调整filters中的layermask），并调整 渲染rendering pass event（after rendering opaques）
+			https://zhuanlan.zhihu.com/p/146396120
+	
+	3. 如何解决decal 对象显示在角色前面
+		3.1 前提，urp要显示decal对象，需要在 UniversalRenderer 增加 decal renderer feature，
+		3.2 解决显示在角色前问题 ：decal renderer feature 的technique调整为screespace
+		3.3 角色所在的renderer feature ， 调整渲染 rendering pass event 为 before rendering transparent，或者after rendering transparent 即可，（用before比较好，否则导致其他层级的image对象总是显示在角色后面）
+		3.4 注意，角色所在render feature的 rendering pass event 调整为 *** rendering transparent 时，如果角色下image对象，比如血条场景，会导致image对象不显示！！！！（因为image对象的材质与transparent有关系？？）
+		3.5 因此需要把image对象调整到其他layer，然后角色渲染调整为 before rendering transparent， 避免image被角色渲染覆盖。
+
+
